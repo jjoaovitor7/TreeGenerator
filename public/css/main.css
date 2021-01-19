@@ -16,6 +16,7 @@ header h1 {
 }
 
 #options {
+  margin: 5px 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -40,7 +41,6 @@ label {
   #options {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    margin: 5px 0;
   }
 
   #treeViewer {
