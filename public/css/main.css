@@ -10,15 +10,35 @@ header h1 {
   font-size: 4.5rem;
 }
 
-#valueForTree{
-    text-align: center;
-    width: 500px;
+#valueForTree {
+  text-align: center;
+  width: 500px;
+}
+
+#options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #treeViewer {
-    width: 510px;
+  width: 510px;
 }
 
 label {
   font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  #valueForTree {
+    width: initial;
+  }
+
+  #options {
+    grid-template-columns: 1fr;
+    margin: 5px 0;
+  }
+
+  #treeViewer {
+    width: initial;
+  }
 }
