@@ -12,11 +12,11 @@ header h1 {
 
 #valueForTree{
     text-align: center;
-    width: 250px;
+    width: 500px;
 }
 
 #treeViewer {
-    width: 260px;
+    width: 510px;
     resize: none;
 }
 
