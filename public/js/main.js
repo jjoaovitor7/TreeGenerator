@@ -25,3 +25,8 @@ document.getElementById("btn-nofinal").addEventListener("click", function () {
   treeViewer.innerHTML += `│${" ".repeat(level)}└──${valueForTree.value}\n`;
   valueForTree.value = "";
 });
+
+document.getElementById("btn-limpar").addEventListener("click", function() {
+  level = 2;
+  treeViewer.innerHTML = "";
+});

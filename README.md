@@ -1,7 +1,7 @@
 # TreeGenerator
 
 <p align="center">
-  <img src="./screenshots/4.png">
+  <img src="./screenshots/5.png">
 </p>
 
 <p align="center">
