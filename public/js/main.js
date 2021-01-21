@@ -1,32 +1,39 @@
+import Buttons from "./Buttons.js";
+
 const valueForTree = document.getElementById("valueForTree");
-const treeViewer = document.getElementById("treeViewer");
-let level = 2;
+const treeViewer   = document.getElementById("treeViewer");
 
-document.getElementById("btn-noprincipal").addEventListener("click", function () {
-    treeViewer.innerHTML += `${valueForTree.value}\n`;
-    level = 2;
-    valueForTree.value = "";
+let levelObject = {
+  level: 2
+};
+
+const btnAddSubNivel   = document.getElementById("btn-addsubnivel");
+const btnSubtractNivel = document.getElementById("btn-subtractsubnivel");
+const btnNoPrincipal   = document.getElementById("btn-noprincipal");
+const btnNoFilho       = document.getElementById("btn-nofilho");
+const btnNoFinal       = document.getElementById("btn-nofinal");
+const btnLimpar        = document.getElementById("btn-limpar");
+
+btnAddSubNivel.addEventListener("click", function () {
+  Buttons.btnAddSubNivel(levelObject);
 });
 
-document.getElementById("btn-nofilho").addEventListener("click", function () {
-  treeViewer.innerHTML += `│${" ".repeat(level)}├──${valueForTree.value}\n`;
-  valueForTree.value = "";
+btnSubtractNivel.addEventListener("click", function () {
+  Buttons.btnSubtractNivel(levelObject);
 });
 
-document.getElementById("btn-addsubnivel").addEventListener("click", function () {
-  level += 3;
+btnNoPrincipal.addEventListener("click", function () {
+  Buttons.btnNoPrincipal(treeViewer, levelObject, valueForTree);
 });
 
-document.getElementById("btn-subtractsubnivel").addEventListener("click", function () {
-  level -= 3;
+btnNoFilho.addEventListener("click", function () {
+  Buttons.btnNoFilho(treeViewer, levelObject, valueForTree);
 });
 
-document.getElementById("btn-nofinal").addEventListener("click", function () {
-  treeViewer.innerHTML += `│${" ".repeat(level)}└──${valueForTree.value}\n`;
-  valueForTree.value = "";
+btnNoFinal.addEventListener("click", function () {
+  Buttons.btnNoFinal(treeViewer, levelObject, valueForTree);
 });
 
-document.getElementById("btn-limpar").addEventListener("click", function() {
-  level = 2;
-  treeViewer.innerHTML = "";
+btnLimpar.addEventListener("click", function () {
+  Buttons.btnLimpar(levelObject, treeViewer);
 });
