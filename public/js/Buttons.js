@@ -42,11 +42,21 @@ class Buttons {
       file.text().then((text) => {
         for (let i = text.length; i >= 1; i--) {
           while (text.includes(">".repeat(i) + ".")) {
-            text = text.replace(">".repeat(i) + ".", `│${" ".repeat(i*2)}└──`);
+            if (i == 0) {
+              text = text.replace(">".repeat(i) + ".", `│${" ".repeat(2)}└──`);
+            }
+            else {
+              text = text.replace(">".repeat(i) + ".", `│${" ".repeat(i*2.5)}└──`);
+            }
           }
 
           while (text.includes(">".repeat(i))) {
-            text = text.replace(">".repeat(i), `│${" ".repeat(i*2)}├──`);
+            if (i == 0) {
+              text = text.replace(">".repeat(i), `│${" ".repeat(2)}├──`);
+            }
+            else {
+              text = text.replace(">".repeat(i), `│${" ".repeat(i*2.5)}├──`);
+            }
           }
         }
         treeViewer.innerHTML = text;
