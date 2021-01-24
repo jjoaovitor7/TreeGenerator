@@ -13,6 +13,7 @@ const btnNoPrincipal   = document.getElementById("btn-noprincipal");
 const btnNoFilho       = document.getElementById("btn-nofilho");
 const btnNoFinal       = document.getElementById("btn-nofinal");
 const btnLimpar        = document.getElementById("btn-limpar");
+const btnPorArquivo    = document.getElementById("btn-fromfile");
 
 btnAddSubNivel.addEventListener("click", function () {
   Buttons.btnAddSubNivel(levelObject);
@@ -36,4 +37,8 @@ btnNoFinal.addEventListener("click", function () {
 
 btnLimpar.addEventListener("click", function () {
   Buttons.btnLimpar(levelObject, treeViewer);
+});
+
+btnPorArquivo.addEventListener("click", function () {
+  Buttons.btnPorArquivo(treeViewer);
 });

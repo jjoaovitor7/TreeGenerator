@@ -14,18 +14,52 @@ class Buttons {
   }
 
   btnNoFilho(treeViewer, levelObject, valueForTree) {
-    treeViewer.innerHTML += `│${" ".repeat(levelObject.level)}├──${valueForTree.value}\n`;
+    treeViewer.innerHTML += `│${" ".repeat(levelObject.level)}├──${
+      valueForTree.value
+    }\n`;
     valueForTree.value = "";
   }
 
   btnNoFinal(treeViewer, levelObject, valueForTree) {
-    treeViewer.innerHTML += `│${" ".repeat(levelObject.level)}└──${valueForTree.value}\n`;
+    treeViewer.innerHTML += `│${" ".repeat(levelObject.level)}└──${
+      valueForTree.value
+    }\n`;
     valueForTree.value = "";
   }
 
   btnLimpar(levelObject, treeViewer) {
     levelObject.level = 2;
     treeViewer.innerHTML = "";
+  }
+
+  btnPorArquivo(treeViewer) {
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("accept", ".tree");
+    input.click();
+    input.addEventListener("change", (event) => {
+      const file = event.target.files.item(0);
+      file.text().then((text) => {
+        if (text.includes(">")) {
+          while (text.includes(">>.")) {
+            text = text.replace(">>.", "│  └──");
+          }
+
+          while (text.includes(">>")) {
+            text = text.replace(">>", "│  ├──");
+          }
+
+          while (text.includes(">.")) {
+            text = text.replace(">.", "│└──");
+          }
+
+          while (text.includes(">")) {
+            text = text.replace(">.", "│├──");
+          }
+        }
+        treeViewer.innerHTML = text;
+      });
+    });
   }
 }
 
