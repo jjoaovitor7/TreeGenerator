@@ -40,21 +40,19 @@ class Buttons {
     input.addEventListener("change", (event) => {
       const file = event.target.files.item(0);
       file.text().then((text) => {
-        if (text.includes(">")) {
-          while (text.includes(">>.")) {
+        for (let i = 0; i < text.length; i++) {
+          if (text.includes(">>>.")) {
+            text = text.replace(">>>.", "│    └──");
+          } else if (text.includes(">>>")) {
+            text = text.replace(">>>", "│    ├──");
+          } else if (text.includes(">>.")) {
             text = text.replace(">>.", "│  └──");
-          }
-
-          while (text.includes(">>")) {
+          } else if (text.includes(">>")) {
             text = text.replace(">>", "│  ├──");
-          }
-
-          while (text.includes(">.")) {
+          } else if (text.includes(">.")) {
             text = text.replace(">.", "│└──");
-          }
-
-          while (text.includes(">")) {
-            text = text.replace(">.", "│├──");
+          } else if (text.includes(">")) {
+            text = text.replace(">", "│├──");
           }
         }
         treeViewer.innerHTML = text;
