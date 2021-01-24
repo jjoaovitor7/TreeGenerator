@@ -40,19 +40,47 @@ class Buttons {
     input.addEventListener("change", (event) => {
       const file = event.target.files.item(0);
       file.text().then((text) => {
+        
         for (let i = 0; i < text.length; i++) {
-          if (text.includes(">>>.")) {
-            text = text.replace(">>>.", "│    └──");
-          } else if (text.includes(">>>")) {
-            text = text.replace(">>>", "│    ├──");
-          } else if (text.includes(">>.")) {
-            text = text.replace(">>.", "│  └──");
-          } else if (text.includes(">>")) {
-            text = text.replace(">>", "│  ├──");
-          } else if (text.includes(">.")) {
-            text = text.replace(">.", "│└──");
-          } else if (text.includes(">")) {
-            text = text.replace(">", "│├──");
+
+          if (text.includes(">>>>>.")) {
+            text = text.replace(">>>>>.", "│        └──"); // 8
+          }
+
+          else if (text.includes(">>>>>")) {
+            text = text.replace(">>>>>", "│        ├──"); // 8
+          }
+
+          else if (text.includes(">>>>.")) {
+            text = text.replace(">>>>.", "│      └──"); // 6
+          }
+          
+          else if (text.includes(">>>>")) {
+            text = text.replace(">>>>", "│      ├──"); // 6
+          }
+          
+          else if (text.includes(">>>.")) {
+            text = text.replace(">>>.", "│    └──"); // 4
+          }
+          
+          else if (text.includes(">>>")) {
+            text = text.replace(">>>", "│    ├──"); // 4
+          }
+          
+          else if (text.includes(">>.")) {
+            text = text.replace(">>.", "│  └──"); // 2
+          }
+          
+          else if (text.includes(">>")) {
+            text = text.replace(">>", "│  ├──"); // 2
+          }
+          
+          else if (text.includes(">.")) {
+            text = text.replace(">.", "│└──"); // 0
+          }
+          
+          else if (text.includes(">")) {
+            text = text.replace(">", "│├──"); // 0
           }
         }
         treeViewer.innerHTML = text;
