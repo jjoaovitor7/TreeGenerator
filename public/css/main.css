@@ -2,12 +2,18 @@
   font-size: 10px;
 }
 
-header h1 {
+#main-header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Yusei Magic", sans-serif;
   font-size: 4.5rem;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center
 }
 
 #valueForTree {
@@ -23,7 +29,8 @@ header h1 {
   grid-template-columns: 1fr 1fr;
 }
 
-#options button, #btn-fromfile {
+#options button,
+#btn-fromfile {
   font-family: "Yusei Magic", sans-serif;
   background: #111;
   border: none;
@@ -36,7 +43,8 @@ header h1 {
   cursor: pointer;
 }
 
-#options button:hover, #btn-fromfile:hover {
+#options button:hover,
+#btn-fromfile:hover {
   background: #555;
 }
 
