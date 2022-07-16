@@ -23,15 +23,3 @@ Gerador de Árvore (Estrutura).
 - JavaScript
 
 ---
-
-## :computer: Como baixar o projeto
-
-```bash
-  // Clonar o repositório
-  $ git clone https://github.com/jjoaovitor7/TreeGenerator
-
-  // Entrar no diretório
-  $ cd TreeGenerator
-```
-
----
