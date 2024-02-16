@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-size: 10px;
 }
@@ -8,6 +14,7 @@
   align-items: center;
   font-family: "Yusei Magic", sans-serif;
   font-size: 4.5rem;
+  margin-top: 3.2rem;
 }
 
 #app {
@@ -29,8 +36,7 @@
   grid-template-columns: 1fr 1fr;
 }
 
-#options button,
-#btn-fromfile {
+#options button {
   font-family: "Yusei Magic", sans-serif;
   background: #111;
   border: none;
@@ -39,7 +45,7 @@
   text-align: center;
   font-size: 16px;
   border-radius: 15px;
-  margin: 5px;
+  margin: 8px;
   cursor: pointer;
 }
 
@@ -55,6 +61,32 @@
 
 label {
   font-size: 1.2rem;
+}
+
+#level-object {
+  margin: 1.6rem 0;
+  font-size: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {

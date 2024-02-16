@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <!-- METATAGS -->
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./public/css/main.css" />
-
-    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" />
 
     <title>Tree Generator</title>
   </head>
@@ -17,9 +14,13 @@
   <body>
     <header id="main-header">
       <h1>Tree Generator</h1>
+      <small id="level-object" class="text-center flex justify-center items-center">
+        Nível:&nbsp;
+        <span></span>
+      </small>
     </header>
 
-    <div id="app" style="">
+    <div id="app">
       <input type="text" id="valueForTree" />
       <div id="options">
         <button id="btn-subtractsubnivel">-Subnível</button>
@@ -28,10 +29,11 @@
         <button id="btn-nofilho">+Nó Filho</button>
         <button id="btn-nofinal">+Nó Final</button>
         <button id="btn-limpar">Limpar</button>
+        <button id="btn-fromfile">Por Arquivo (tree)</button>
+        <button id="btn-export">Exportar</button>
       </div>
-      <button id="btn-fromfile">Por Arquivo (tree)</button>
 
-      <textarea readonly id="treeViewer" rows="8"></textarea>
+      <textarea id="treeViewer" rows="10"></textarea>
     </div>
 
     <script type="module" src="./public/js/main.js"></script>
